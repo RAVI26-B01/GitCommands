@@ -1,0 +1,53 @@
+git init                            --> to initiate the git repository
+git status                          --> to check status
+git ls                              --> log all files name
+rm -rf .git                         --> delete git repo 
+git clone(url)                      --> import project
+git add --a                         --> add file to stage
+git commit -m "message"             --> commit file and add message or reason
+
+touch .gitignore
+  new .gitignore file will be created. the files or folders which need not to be create should 
+be mentioned in inside .gitignore file 
+  eg: logs files ( info log, error log...).
+
+git diff   			   	 --> show file diffent between staging area and working directory(local)
+git diff --staged 		   	 --> compare between previuos staged files
+git commit -a -m "comment"	  	 --> Commit only files which are in staged area
+$ git rm <file-name> 	  	   	 --> file will be deleted and moved to Staging
+$ git mv <present-name> <new-name>	   --> file name will be renamed from abc to xyz and moved to staging
+$ git rm --cached <filename> 	           --> to removed from staging area. 
+
+note : 
+  if file already present in staging area and if we add that file in .gitignore file , still we can track that files.
+to remove track we have to use "git rm --cached file_name" command.
+
+git log -p 				  -->  show commit state with the different
+git log -p -n  				  -->  show only specfic "n" number of commit
+git log --since 2.days			  -->  show commited files for particular period
+git log --pretty=format:"<any-format>"	  -->  show log based on given format
+git restore --staged <filename>		  -->  to remove file from staged area
+git checkout -- <filename>		  -->  respective file, if not staged will move back to previous commit state
+git checkout -f			          -->  all the files which are not staged will move to previous commit state
+
+
+git config --global alias.st status  ==> git status -> git st
+git congig --global alias.unstage 'restore --staged --' ==> git restore --staged <filename> -> git unstage <fileName>
+
+
+git checkout -b <branchName>      	--> Create new brach
+git checkout <branchName>		--> to switch the brach
+git merge <branchName>			--> to merge files between <currentbrach> and entered <brachname>
+git branch 				--> to fetch all branch names
+git branch --merged			--> already merged braches
+git branch --no -merged			--> not merged branches
+
+Deleting brach::
+
+git branch -d <brachName> 		--> gives error if <brachName> is not merged
+git branch -D <brachName> 		--> no errors and delete branch
+
+git push origin <branchName>:<aliasBranchName> --> in remort <aliasBranchName> will be created instead <branchName>
+git push -d origin <branchname>		--> <branchname> will delete from remort
+
+
